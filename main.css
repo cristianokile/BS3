@@ -1,0 +1,137 @@
+ /* --------------------------------------------------------- */
+ /*    BS3 - BASIC STYLES SHEET STRUCTURE: (Based on SMACSS) 
+ /* --------------------------------------------------------- */
+ 
+ /*
+ *  1.0 - BASE / GLOBALS
+ *  2.0 - LAYOUT
+ *   - 2.0 - HEADER
+ *   - 2.1 - FOOTER
+ *   - 2.2 - SIDEBARS
+ *   - 2.3 - CONTENT
+ *  3.0 - VISUAL
+ *   - 3.1 - COLORS
+ *   - 3.2 - BORDERS
+ *   - 3.3 - BACKGROUND
+ *  4.0 - MODULES
+ *  5.0 - PLUGINS
+ *  6.0 - STATES
+ *   - 6.1 - :ACTIVE
+ *   - 6.2 - :HOVER
+ *   - 6.3 - :FOCUS
+ *   - 6.4 - :VISITED
+ *   - 6.5 - :FOCUS-WITHIM
+ *  7.0 - QUICK FIX / HOOKS
+ *  8.0 - MEDIA QUERIES
+ *   - 8.1 - BETWEEN
+ *   - 8.2 - LESS THEN
+ *   - 8.3 - BIGGER THEN
+ */
+
+/* 1.0 - BASE / GLOBALS */
+
+
+/* 2.0 - LAYOUT */
+
+	/* 2.1 - HEADER */
+
+	/* 2.2 - FOOTER */
+
+	/* 2.3 - SIDEBARS */
+
+	/* 2.4 - CONTENT */
+
+
+/* 3.0 - VISUAL */
+
+	/*  3.1 - COLORS */
+
+	/*  3.2 - BORDERS */
+
+	/*  3.3 - BACKGROUNDS */
+
+
+/* 4.0 - MODULES */
+
+/* 5.0 - PLUGINS */
+
+/* 6.0 - STATES */
+
+	/* 6.1 - :ACTIVE */
+	/* 6.2 - :HOVER */
+	/* 6.3 - :FOCUS */
+	/* 6.4 - :VISITED */
+	/* 6.5 - :FOCUS-WITHIN */
+
+/* 7.0 - QUICK FIX / HOOKS  */
+
+/* 8.0 - MEDIA QUERIES */		
+
+	/* 8.1 - BETWEEN -- */
+
+		/* XXS - Resolution from 0 to 480px */
+		@media screen and (max-width: 480px){
+
+		}
+		/* XS - Resolution from 481px to 768px */
+		@media screen and (min-width: 481px) and (max-width: 768px){
+		 		   
+		}
+		/* SM - Resolution from 769px to 992px */
+		@media screen and (min-width: 769px) and (max-width: 992px){
+			
+		}
+		/* MD - Resolution from 993px to 1200px */
+		@media screen and (min-width: 993px) and (max-width: 1200px){
+			
+		}
+		/* LG - Resolution from 1201pxtoé 1599px */
+		@media screen and (min-width: 1201px) and (max-width: 1599){
+			
+		}
+		/* XL - Resolution bigger than 1600px */
+		@media screen and (min-width: 1600px){
+			
+		}
+
+	/* 8.2 - LESS THAN -- */
+
+		/* XS - Resolution until 768px */
+		@media screen and (max-width: 767px){
+			
+		}
+		/* SM - Resolution until 992px */
+		@media screen and (max-width: 991px){
+			
+		}
+		/* MD - Resolution until 1200px */
+		@media screen and (max-width: 1199px){
+		    
+		}
+		/* LG - Resolution until 1599px */
+		@media screen and (max-width: 1599px){
+		    
+		}
+
+	/* 8.3 - BIGGER THAN -- */
+
+		/* XXS - Resolution from 481px */
+		@media screen and (min-width: 481px){
+			
+		}
+		/* XS - Resolution from 769px */
+		@media screen and (min-width: 769px){
+		    
+		}
+		/* MD - Resolution from 993px */
+		@media screen and (min-width: 993px){
+			
+		}
+		/* LG - Resolution from 1201px */
+		@media screen and (min-width: 1201px){
+			 	
+		}
+		/* XL - Resolution from 1599px */
+		@media screen and (min-width: 1599px){
+		    
+		}
