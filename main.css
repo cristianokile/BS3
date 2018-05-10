@@ -1,9 +1,32 @@
+ /*
+ Theme Name:   
+ Theme URI:    
+ Description:  Folha de Estilos do Site Institucional 
+ Author:       Agência New//it (by Cristiano Kile Pereira)
+ Author URI:   http://www.agencianew.it
+ Template:     
+ Version:      1.0
+*/
+
+@charset "UTF-8";
+
+/* Bootstrap */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css.map');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css');
+
+/* Fonts */
+@import url("https://use.fontawesome.com/releases/v5.0.12/css/all.css");
+
  /* ---------------------------------------------------------- */
  /*    BS3 - BASIC STYLES SHEET STRUCTURE: (Based on SMACSS) 
  /* ---------------------------------------------------------- */
  
  /*
  *  1.0 - BASE / GLOBALS
+ *   - 1.1 - GLOBALS
+ *   - 1.2 - ALIGN
+ *   - 1.3 - MARGIN / PADDING
  *  2.0 - LAYOUT
  *   - 2.0 - HEADER
  *   - 2.1 - FOOTER
@@ -31,7 +54,161 @@
 
 /* 1.0 - BASE / GLOBALS */
 
+	/* 1.1 - GLOBALS */
+		ul.style-type-none{list-style-type: none; padding: 0; margin: 0}
+		ul.style-type-none li{padding: 0; margin: 0}
 
+		.display-inline{display: inline;}
+		.display-inline-block{display: inline-block;}
+		.display-block{display: block;}
+		.display-table{display: table;}
+
+		.h1, .h2, .h3, .h4, .h5, .h6, 
+		h1, h2, h3, h4, h5, h6 {
+		    margin-top: 5px;
+		    margin-bottom: 5px;
+		}
+	
+	/* 1.2 - ALIGN */
+		.text-center{text-align: center}
+		.text-left{text-align: left}
+		.text-right{text-align: right}
+		.text-justify{text-align: justify;}
+
+	/* 1.3 - MARGIN / PADDING */
+		.margin-auto{margin: auto;}
+		.margin-0{margin: 0;}
+		.margin-5{margin: 5px;}
+		.margin-10{margin: 10px;}
+		.margin-15{margin: 15px;}
+		.margin-20{margin: 20px;}
+		.margin-25{margin: 25px;}
+		.margin-30{margin: 30px;}
+		.margin-35{margin: 35px;}
+		.margin-40{margin: 40px;}
+		.margin-45{margin: 45px;}
+		.margin-50{margin: 50px;}
+		.margin-55{margin: 55px;}
+		.margin-60{margin: 60px;}
+		.margin-65{margin: 65px;}
+		.margin-70{margin: 70px;}
+		.margin-75{margin: 75px;}
+		.margin-80{margin: 80px;}
+		.margin-85{margin: 85px;}
+		.margin-90{margin: 90px;}
+		.margin-95{margin: 95px;}
+		.margin-100{margin: 100px;}
+
+		.margin-top-0{margin-top: 0;}
+		.margin-top-5{margin-top: 5px;}
+		.margin-top-10{margin-top: 10px;}
+		.margin-top-15{margin-top: 15px;}
+		.margin-top-20{margin-top: 20px;}
+		.margin-top-25{margin-top: 25px;}
+		.margin-top-30{margin-top: 30px;}
+		.margin-top-35{margin-top: 35px;}
+		.margin-top-40{margin-top: 40px;}
+		.margin-top-45{margin-top: 45px;}
+		.margin-top-50{margin-top: 50px;}
+		.margin-top-55{margin-top: 55px;}
+		.margin-top-60{margin-top: 60px;}
+		.margin-top-65{margin-top: 65px;}
+		.margin-top-70{margin-top: 70px;}
+		.margin-top-75{margin-top: 75px;}
+		.margin-top-80{margin-top: 80px;}
+		.margin-top-85{margin-top: 85px;}
+		.margin-top-90{margin-top: 90px;}
+		.margin-top-95{margin-top: 95px;}
+		.margin-top-100{margin-top: 100px;}
+
+		.margin-bottom-0{margin: 0;}
+		.margin-bottom-5{margin: 5px;}
+		.margin-bottom-10{margin: 10px;}
+		.margin-bottom-15{margin: 15px;}
+		.margin-bottom-20{margin: 20px;}
+		.margin-bottom-25{margin: 25px;}
+		.margin-bottom-30{margin: 30px;}
+		.margin-bottom-35{margin: 35px;}
+		.margin-bottom-40{margin: 40px;}
+		.margin-bottom-45{margin: 45px;}
+		.margin-bottom-50{margin: 50px;}
+		.margin-bottom-55{margin: 55px;}
+		.margin-bottom-60{margin: 60px;}
+		.margin-bottom-65{margin: 65px;}
+		.margin-bottom-70{margin: 70px;}
+		.margin-bottom-75{margin: 75px;}
+		.margin-bottom-80{margin: 80px;}
+		.margin-bottom-85{margin: 85px;}
+		.margin-bottom-90{margin: 90px;}
+		.margin-bottom-95{margin: 95px;}
+		.margin-bottom-100{margin: 100px;}	
+
+		.padding-0{padding: 0;}
+		.padding-5{padding: 5px;}
+		.padding-10{padding: 10px;}
+		.padding-15{padding: 15px;}
+		.padding-20{padding: 20px;}
+		.padding-25{padding: 25px;}
+		.padding-30{padding: 30px;}
+		.padding-35{padding: 35px;}
+		.padding-40{padding: 40px;}
+		.padding-45{padding: 45px;}
+		.padding-50{padding: 50px;}
+		.padding-55{padding: 55px;}
+		.padding-60{padding: 60px;}
+		.padding-65{padding: 65px;}
+		.padding-70{padding: 70px;}
+		.padding-75{padding: 75px;}
+		.padding-80{padding: 80px;}
+		.padding-85{padding: 85px;}
+		.padding-90{padding: 90px;}
+		.padding-95{padding: 95px;}
+		.padding-100{padding: 100px;}
+
+		.padding-top-00{padding-top: 0;}
+		.padding-top-05{padding-top: 5px;}
+		.padding-top-10{padding-top: 10px;}
+		.padding-top-15{padding-top: 15px;}
+		.padding-top-20{padding-top: 20px;}
+		.padding-top-25{padding-top: 25px;}
+		.padding-top-30{padding-top: 30px;}
+		.padding-top-35{padding-top: 35px;}
+		.padding-top-40{padding-top: 40px;}
+		.padding-top-45{padding-top: 45px;}
+		.padding-top-50{padding-top: 50px;}
+		.padding-top-55{padding-top: 55px;}
+		.padding-top-60{padding-top: 60px;}
+		.padding-top-65{padding-top: 65px;}
+		.padding-top-70{padding-top: 70px;}
+		.padding-top-75{padding-top: 75px;}
+		.padding-top-80{padding-top: 80px;}
+		.padding-top-85{padding-top: 85px;}
+		.padding-top-90{padding-top: 90px;}
+		.padding-top-95{padding-top: 95px;}
+		.padding-top-100{padding-top: 100px;}
+
+		.padding-bottom-0{padding-bottom: 0;}
+		.padding-bottom-5{padding-bottom: 5px;}
+		.padding-bottom-10{padding-bottom: 10px;}
+		.padding-bottom-15{padding-bottom: 15px;}
+		.padding-bottom-20{padding-bottom: 20px;}
+		.padding-bottom-25{padding-bottom: 25px;}
+		.padding-bottom-30{padding-bottom: 30px;}
+		.padding-bottom-35{padding-bottom: 35px;}
+		.padding-bottom-40{padding-bottom: 40px;}
+		.padding-bottom-45{padding-bottom: 45px;}
+		.padding-bottom-50{padding-bottom: 50px;}
+		.padding-bottom-55{padding-bottom: 55px;}
+		.padding-bottom-60{padding-bottom: 60px;}
+		.padding-bottom-65{padding-bottom: 65px;}
+		.padding-bottom-70{padding-bottom: 70px;}
+		.padding-bottom-75{padding-bottom: 75px;}
+		.padding-bottom-80{padding-bottom: 80px;}
+		.padding-bottom-85{padding-bottom: 85px;}
+		.padding-bottom-90{padding-bottom: 90px;}
+		.padding-bottom-95{padding-bottom: 95px;}
+		.padding-bottom-100{padding-bottom: 100px;}	
+	
 /* 2.0 - LAYOUT */
 
 	/* 2.1 - HEADER */
@@ -45,11 +222,41 @@
 
 /* 3.0 - VISUAL */
 
-	/*  3.1 - COLORS */
+	/*  3.1 - FONTS */
+	.font-size-12 {font-size: 12px}
+	.font-size-14 {font-size: 14px}
+	.font-size-16 {font-size: 16px}
+	.font-size-18 {font-size: 18px}
+	.font-size-20 {font-size: 20px}
+	.font-size-22 {font-size: 22px}
+	.font-size-24 {font-size: 24px}
+	.font-size-26 {font-size: 26px}
+	.font-size-28 {font-size: 28px}
+	.font-size-32 {font-size: 32px}
+	.font-size-36 {font-size: 36px}
+	.font-size-48 {font-size: 48px}
+	.font-size-52 {font-size: 52px}
+	.font-size-64 {font-size: 64px}
 
-	/*  3.2 - BORDERS */
+	.letter-spacing--1{letter-spacing: -1px}
+	.letter-spacing-0{letter-spacing: 0}
+	.letter-spacing-1{letter-spacing: 1px}
+	.letter-spacing-2{letter-spacing: 2px}
+	
+	/*  3.2 - COLORS */
+	.clr-white{color: #FFFFFF;}
+	.clr-black{color: #000000;}
 
-	/*  3.3 - BACKGROUNDS */
+	/*  3.3 - BORDERS */
+	.bdr-white{border: 1px solid #FFFFFF;}
+	.bdr-black{border: 1px solid #000000;}
+
+	.bdr-radius-5 {border-radius: 5px; -o-border-radius:5px; -ms--o-border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;}
+	.bdr-radius-10 {border-radius: 10px; -o-border-radius:10px; -ms--o-border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px;}
+	.bdr-radius-15 {border-radius: 15px; -o-border-radius:15px; -ms--o-border-radius:15px; -moz-border-radius:15px; -webkit-border-radius:15px;}
+	.bdr-radius-20 {border-radius: 20px; -o-border-radius:20px; -ms--o-border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;}
+
+	/*  3.4 - BACKGROUNDS */
 
 
 /* 4.0 - MODULES */
@@ -59,10 +266,18 @@
 /* 6.0 - STATES */
 
 	/* 6.1 - :ACTIVE */
+
 	/* 6.2 - :HOVER */
+
 	/* 6.3 - :FOCUS */
+
 	/* 6.4 - :VISITED */
+
 	/* 6.5 - :FOCUS-WITHIN */
+
+	/* 6.6 - TRANSITIONS */
+	.transition-02{ transition: all 0.2s ease}
+	.transition-05{ transition: all 0.5s ease}
 
 /* 7.0 - QUICK FIX / HOOKS  */
 
