@@ -5,7 +5,7 @@
  Author:       Agência New//it (by Cristiano Kile Pereira)
  Author URI:   http://www.agencianew.it
  Template:     
- Version:      1.0
+ Version:      1.0.3
 */
 
 @charset "UTF-8";
@@ -472,8 +472,8 @@
 			.padding-sm-150{padding: 150px;}
 			.padding-sm-200{padding: 200px;}
 
-			.padding-sm-top-00{padding-top: 0;}
-			.padding-sm-top-05{padding-top: 5px;}
+			.padding-sm-top-0{padding-top: 0;}
+			.padding-sm-top-5{padding-top: 5px;}
 			.padding-sm-top-10{padding-top: 10px;}
 			.padding-sm-top-15{padding-top: 15px;}
 			.padding-sm-top-20{padding-top: 20px;}
