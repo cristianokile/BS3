@@ -29,10 +29,10 @@
  *   - 1.2 - ALIGN
  *   - 1.3 - MARGIN / PADDING
  *  2.0 - LAYOUT
- *   - 2.0 - HEADER
- *   - 2.1 - FOOTER
- *   - 2.2 - SIDEBARS
- *   - 2.3 - CONTENT
+ *   - 2.1 - HEADER
+ *   - 2.2 - FOOTER
+ *   - 2.3 - SIDEBARS
+ *   - 2.4 - CONTENT
  *  3.0 - VISUAL
  *   - 3.1 - FONTS
  *   - 3.2 - COLORS
@@ -63,6 +63,7 @@
 		.display-inline-block{display: inline-block;}
 		.display-block{display: block;}
 		.display-table{display: table;}
+                .display-none{display: none;}
 
 		.h1, .h2, .h3, .h4, .h5, .h6, 
 		h1, h2, h3, h4, h5, h6 {
@@ -612,14 +613,19 @@
 
 		/* XXS - Resolution from 0 to 480px */
 		@media screen and (max-width: 480px){
+			.hide-xxs{display: none;}
+			.text-xxs-center{text-align: center}
+			.text-xxs-left{text-align: left}
+			.text-xxs-right{text-align: right}
+			.text-xxs-justify{text-align: justify;}
+		}
+		/* XS - Resolution from 481px to 768px */
+		@media screen and (min-width: 481px) and (max-width: 768px){
 			.hide-xs{display: none;}
 			.text-xs-center{text-align: center}
 			.text-xs-left{text-align: left}
 			.text-xs-right{text-align: right}
 			.text-xs-justify{text-align: justify;}
-		}
-		/* XS - Resolution from 481px to 768px */
-		@media screen and (min-width: 481px) and (max-width: 768px){
 		 		   
 		}
 		/* SM - Resolution from 769px to 992px */
