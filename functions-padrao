@@ -1,0 +1,205 @@
+<?php
+
+if ( ! function_exists( 'seutema_setup' ) ) :
+
+    function seutema_setup() {
+
+        // Torna o site traduzivel
+        load_seutema_textdomain( 'curiosaudaveis' );
+
+        // Adiciona por padrão posts e comentários em links de feed no cabeçalho
+        add_seutema_support( 'automatic-feed-links' );
+
+        // Deixa o WordPress gerenciar o titulo da página     
+        add_seutema_support( 'title-tag' );
+
+        // Habilita o suporte a logo customizável
+        add_seutema_support( 'custom-logo', array(
+            'height' => 240,
+            'width' => 240,
+            'flex-height' => true,
+        ) );
+
+        // Habilita miniaturas de posts
+        add_seutema_support( 'post-thumbnails' );
+        // add_image_size( 'curiosaudaveis-featured-image', 2000, 1200, true );
+        // add_image_size( 'curiosaudaveis-thumbnail-avatar', 100, 100, true );
+
+
+        // Registra o menu no tema
+        register_nav_menus( array(
+            'top'    => __( 'Top Menu', 'curiosaudaveis' ),
+            'social' => __( 'Social Links Menu', 'curiosaudaveis' ),
+        ) );
+
+        // Alterna a marcação básica padrão para o formulário de pesquisa, o formulário de comentário e os comentários para produzir HTML5 válido.
+        add_seutema_support( 'html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ) );
+
+        // Habilita formatos de posts
+        add_seutema_support( 'post-formats', array(
+            'aside',
+            'image',
+            'video',
+            'quote',
+            'link',
+            'gallery',
+            'audio',
+        ) );
+
+        // Adiciona suporte a Backgrund Customizavel
+        add_seutema_support( 'custom-background', 
+            apply_filters('seutema_custom_background_args', 
+                array(
+                    'default-color' => 'ffffff', 
+                    'default-image' => ''
+                )
+            )
+        );
+
+        // Adiciona suporte a Logo customizado
+        add_seutema_support( 'custom-logo', array(
+            'width'       => 250,
+            'height'      => 250,
+            'flex-width'  => true,
+        ) );
+
+        // Adiciona suporte para atualização seletiva de widgets
+        add_seutema_support( 'customize-selective-refresh-widgets' );
+
+    }
+    add_action( 'after_setup_theme', 'seutema_setup' );
+
+    // Registra áreas de widgets
+    function seutema_widgets_init() {
+        register_sidebar( array(
+            'name'          => __( 'Blog Sidebar', 'curiosaudaveis' ),
+            'id'            => 'sidebar-1',
+            'description'   => __( 'Widgets adicionados aqui, aparecerão na sidebar lateral', 'curiosaudaveis' ),
+            'before_widget' => '',
+            'after_widget'  => '',
+            'before_title'  => '',
+            'after_title'   => '',
+        ) );
+        register_sidebar( array(
+            'name'          => __( 'Footer Area 1', 'curiosaudaveis' ),
+            'id'            => 'footer-area-1',
+            'description'   => __( 'Widgets adicionados aqui, aparecerão na área de widget 1 no footer', 'curiosaudaveis' ),
+            'before_widget' => '',
+            'after_widget'  => '',
+            'before_title'  => '',
+            'after_title'   => '',
+        ) );
+        register_sidebar( array(
+            'name'          => __( 'Footer Area 2', 'curiosaudaveis' ),
+            'id'            => 'footer-area-2',
+            'description'   => __( 'Widgets adicionados aqui, aparecerão na área de widget 2 no footer', 'curiosaudaveis' ),
+            'before_widget' => '',
+            'after_widget'  => '',
+            'before_title'  => '',
+            'after_title'   => '',
+        ) );
+    }
+    add_action( 'widgets_init', 'seutema_widgets_init' );
+
+    // Automaticamente gera ... ao "Ler mais"
+    function seutema_excerpt_more( $link ) {
+        if ( is_admin() ) {
+            return $link;
+        }
+
+        $link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+            esc_url( get_permalink( get_the_ID() ) ),
+            /* translators: %s: Name of current post */
+            sprintf( __( 'Continuar lendo<span class="screen-reader-text"> "%s"</span>', 'curiosaudaveis' ), get_the_title( get_the_ID() ) )
+        );
+        return ' &hellip; ' . $link;
+    }
+    add_filter( 'excerpt_more', 'seutema_excerpt_more' );
+
+    // Adiciona uma classe 'js' para o elemento root "<html>" quando o javascript é detectado.
+    function seutema_javascript_detection() {
+        echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+    }
+    add_action( 'wp_head', 'seutema_javascript_detection', 0 );
+
+    // Adiciona uma url pingback auto-descobrivel para singularmente artigos identificaveis
+    function seutema_pingback_header() {
+        if ( is_singular() && pings_open() ) {
+            printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+        }
+    }
+    add_action( 'wp_head', 'seutema_pingback_header' );
+
+    // Enfileirar scripts e estilos
+    function seutema_scripts() {
+
+        // Adiciona estilos
+        wp_enqueue_style( 'curiosaudaveis-style', get_stylesheet_uri() );
+
+        // Adiciona scripts
+        wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', array( 'jquery' ), '3.3.1', true );
+        wp_enqueue_script( 'jquery-ui', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min', array(), '1.12.1', true );
+        wp_enqueue_script( 'modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), '2.8.3', true );
+        wp_enqueue_script( 'bootstrap-bundle', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js', array(), '4.2.1', true );
+        wp_enqueue_script( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js', array(), '4.2.1', true );
+        wp_enqueue_script( 'jquery-mask-input', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js', array(), '1.14.15', true );
+        wp_enqueue_script( 'functionsjs', get_seutema_file_uri( '/js/scripts.js' ), array(), '0.0.1' );
+
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
+    }
+    add_action( 'wp_enqueue_scripts', 'seutema_scripts' );
+
+    // Adiciona tamanhos customizados de imagens para habilitar a funcionalidade de imagens responsivas para conteudos de imagens
+    function seutema_content_image_sizes_attr( $sizes, $size ) {
+        $width = $size[0];
+        if ( 740 <= $width ) {
+            $sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
+        }
+        if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
+            if ( ! ( is_page() && 'one-column' === get_seutema_mod( 'page_options' ) ) && 767 <= $width ) {
+                 $sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+            }
+        }
+        return $sizes;
+    }
+    add_filter( 'wp_calculate_image_sizes', 'seutema_content_image_sizes_attr', 10, 2 );
+
+    // Adiciona tamanhos customizados de imagens para habilitar a funcionalidade de imagens responsivas em miniaturas de posts
+    function seutema_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+        if ( is_archive() || is_search() || is_home() ) {
+            $attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+        } else {
+            $attr['sizes'] = '100vw';
+        }
+
+        return $attr;
+    }
+    add_filter( 'wp_get_attachment_image_attributes', 'seutema_post_thumbnail_sizes_attr', 10, 3 );
+
+    // Use front-page.php quando uma Front Page for selecionada como uma página estática
+    function seutema_front_page_template( $template ) {
+        return is_home() ? '' : $template;
+    }
+    add_filter( 'frontpage_template',  'seutema_front_page_template' );
+
+    // Modifica uma tag cloud widget para exibir todas as tags na mesma font size e usa uma lista de formato melhor acessivel.
+    function seutema_widget_tag_cloud_args( $args ) {
+        $args['largest']  = 1;
+        $args['smallest'] = 1;
+        $args['unit']     = 'em';
+        $args['format']   = 'list';
+
+        return $args;
+    }
+    add_filter( 'widget_tag_cloud_args', 'seutema_widget_tag_cloud_args' );
+
+
+endif; ?>
