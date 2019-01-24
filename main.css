@@ -611,16 +611,16 @@
 
 	/* 8.1 - BETWEEN -- */
 
-		/* XXS - Resolution from 0 to 480px */
-		@media screen and (max-width: 480px){
+		/* XXS - Resolution from 0 to 576px */
+		@media screen and (max-width: 576px){
 			.hide-xxs{display: none;}
 			.text-xxs-center{text-align: center}
 			.text-xxs-left{text-align: left}
 			.text-xxs-right{text-align: right}
 			.text-xxs-justify{text-align: justify;}
 		}
-		/* XS - Resolution from 481px to 768px */
-		@media screen and (min-width: 481px) and (max-width: 768px){
+		/* XS - Resolution from 577px to 768px */
+		@media screen and (min-width: 577px) and (max-width: 768px){
 			.hide-xs{display: none;}
 			.text-xs-center{text-align: center}
 			.text-xs-left{text-align: left}
@@ -666,8 +666,8 @@
 
 	/* 8.3 - BIGGER THAN -- */
 
-		/* XXS - Resolution from 481px */
-		@media screen and (min-width: 481px){
+		/* XXS - Resolution from 577px */
+		@media screen and (min-width: 577px){
 			 
 		}
 		/* XS - Resolution from 769px */
